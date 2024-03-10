@@ -1,0 +1,31 @@
+# Default values for scaleschedule.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  repository: ahmed3sam/scale-schedule
+  pullPolicy: Always
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+
+crdObjects:
+- schedulename: test
+  deploymentNamespace: default
+  deploymentName: test
+  schedule:
+  - at: "00:00"
+    replicas: 5
+  - at: "07:25"
+    replicas: 0
+
+
+# - scheduleName: object2
+#   deploymentNamespace: dev
+#   deploymentName: test-2
+#   schedule: []
+#   - at: "22:22"
+#     replicas: 5
+#   

@@ -1,0 +1,15 @@
+{{- range .Values.crdObjects }}
+apiVersion: samplecontroller.k8s.io/v1alpha1
+kind: ScaleSchedule
+metadata:
+  name: {{ .schedulename }}
+  namespace: {{ .deploymentNamespace }}
+spec:
+  targetRef:
+    deploymentName: {{ .deploymentName }}
+    deploymentNamespace: {{ .deploymentNamespace }}
+  {{- with .schedule }}
+  schedule:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+{{- end }}

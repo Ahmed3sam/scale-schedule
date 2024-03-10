@@ -1,0 +1,13 @@
+apiVersion: samplecontroller.k8s.io/v1alpha1
+kind: ScaleSchedule
+metadata:
+  name: example-foo
+spec:
+  targetRef:
+    deploymentName: test
+    deploymentNamespace: default
+  schedule:
+  - at: "22:22"
+    replicas: 5
+    
+
