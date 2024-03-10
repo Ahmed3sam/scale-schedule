@@ -3,11 +3,11 @@
 ### Demonstration
 
 This project contain controller that satisfy the following requirements:
-    a. Schedule daily scaling changes for specific deployments.
-    b. Schedules are to be saved as Kubernetes CRD objects.
-    c. Controller to:
-        i. Translate CRD objects into CronJob objects.
-        ii. Ensure any updates to CRD objects are reflected on CronJob objects.
+- Schedule daily scaling changes for specific deployments.
+- Schedules are to be saved as Kubernetes CRD objects.
+- Controller to:
+    1. Translate CRD objects into CronJob objects.
+    2. Ensure any updates to CRD objects are reflected on CronJob objects.
         
 The controller creates Cronjobs from the CRD objects and ensure the follow:
 - create list of cronjobs based on daily schedule (HOUR:MINUTE) and the desired replics
